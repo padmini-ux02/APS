@@ -1,30 +1,39 @@
 import java.util.*;
 
-class MinStack {
+class MinStack 
+{
     private Stack<int[]> stack;
 
-    public MinStack() {
+    public MinStack() 
+    {
         stack =new Stack<>();
     }
     
-    public void push(int val) {
-        if (stack.isEmpty()){
+    public void push(int val) 
+    {
+        if (stack.isEmpty())
+        {
             stack.push(new int[]{val, val});
-        }else {
+        }
+        else 
+        {
             int currentMin =stack.peek()[1];
             stack.push(new int[]{val, Math.min(val, currentMin)});
         }
     }
     
-    public void pop() {
+    public void pop() 
+    {
         stack.pop();
     }
     
-    public int top() {
+    public int top() 
+    {
         return stack.peek()[0];
     }
     
-    public int getMin() {
+    public int getMin() 
+    {
         return stack.peek()[1];
 
     }
