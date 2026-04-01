@@ -1,6 +1,5 @@
 class MyCircularDeque 
 {
-
     int[] deque;
     int front, rear, size, capacity;
 
