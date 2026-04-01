@@ -2,7 +2,6 @@ class Solution
 {
     public int leastInterval(char[] tasks, int n) 
     {
-        
         int[] freq = new int[26];
         
         for (char t : tasks) 
