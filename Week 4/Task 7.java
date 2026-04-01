@@ -1,9 +1,11 @@
-class MyCircularDeque {
+class MyCircularDeque 
+{
 
     int[] deque;
     int front, rear, size, capacity;
 
-    public MyCircularDeque(int k) {
+    public MyCircularDeque(int k) 
+    {
         capacity = k;
         deque = new int[k];
         front = 0;
@@ -11,7 +13,8 @@ class MyCircularDeque {
         size = 0;
     }
 
-    public boolean insertFront(int value) {
+    public boolean insertFront(int value) 
+    {
         if (isFull()) return false;
 
         front = (front - 1 + capacity) % capacity;
@@ -20,7 +23,8 @@ class MyCircularDeque {
         return true;
     }
 
-    public boolean insertLast(int value) {
+    public boolean insertLast(int value) 
+    {
         if (isFull()) return false;
 
         deque[rear] = value;
@@ -29,7 +33,8 @@ class MyCircularDeque {
         return true;
     }
 
-    public boolean deleteFront() {
+    public boolean deleteFront() 
+    {
         if (isEmpty()) return false;
 
         front = (front + 1) % capacity;
@@ -37,7 +42,8 @@ class MyCircularDeque {
         return true;
     }
 
-    public boolean deleteLast() {
+    public boolean deleteLast() 
+    {
         if (isEmpty()) return false;
 
         rear = (rear - 1 + capacity) % capacity;
@@ -45,21 +51,25 @@ class MyCircularDeque {
         return true;
     }
 
-    public int getFront() {
+    public int getFront() 
+    {
         if (isEmpty()) return -1;
         return deque[front];
     }
 
-    public int getRear() {
+    public int getRear() 
+    {
         if (isEmpty()) return -1;
         return deque[(rear - 1 + capacity) % capacity];
     }
 
-    public boolean isEmpty() {
+    public boolean isEmpty() 
+    {
         return size == 0;
     }
 
-    public boolean isFull() {
+    public boolean isFull() 
+    {
         return size == capacity;
     }
 }
