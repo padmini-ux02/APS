@@ -12,21 +12,18 @@ class Solution
         for (int right = 0; right < nums.length; right++) 
         {
             
-            // Maintain decreasing deque for max
             while (!maxDeque.isEmpty() && nums[right] > maxDeque.peekLast()) 
             {
                 maxDeque.pollLast();
             }
             maxDeque.offerLast(nums[right]);
             
-            // Maintain increasing deque for min
             while (!minDeque.isEmpty() && nums[right] < minDeque.peekLast()) 
             {
                 minDeque.pollLast();
             }
             minDeque.offerLast(nums[right]);
             
-            // Shrink window if invalid
             while (maxDeque.peekFirst() - minDeque.peekFirst() > limit) 
             {
                 
